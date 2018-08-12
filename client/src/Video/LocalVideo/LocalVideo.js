@@ -9,7 +9,10 @@ class LocalVideo extends Component {
     }
 
     componentDidMount() {
-        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+        navigator.getUserMedia = (navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia);
 
         navigator.getUserMedia(
             {video: true, audio: true},
