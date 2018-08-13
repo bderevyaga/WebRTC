@@ -85,18 +85,7 @@ class App extends Component {
         return (
             <div>
                 <Video ws={this.state.ws} rtc={this.state.rtc}/>
-                <div>
-                    <input type="button" value="Start"/>
-                    <input type="button" value="Stop"/>
-                    <input type="button" value="Next"/>
-                </div>
-                <div>
-                    text
-                </div>
-                <div>
-                    <input type="text"/>
-                    <input type="button" value="Sent"/>
-                </div>
+                <Chat></Chat>
             </div>
         );
     }
