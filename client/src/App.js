@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Video from "./Video/Video";
+import Chat from "./Chat/Chat";
+
 import './App.css';
 
 class App extends Component {
@@ -14,7 +16,7 @@ class App extends Component {
 
         this.state = {
             ws: new WebSocket('ws://127.0.0.1:9090'),
-            rtc: new RTCPeerConnection(configuration)
+            rtc: new RTCPeerConnection(configuration, {optional: [{RtpDataChannels: true}]})
         };
 
         this.state.ws.onmessage = (msg) => {
@@ -85,7 +87,12 @@ class App extends Component {
         return (
             <div>
                 <Video ws={this.state.ws} rtc={this.state.rtc}/>
-                <Chat></Chat>
+                <div className="controls">
+                    <input type="button" value="Start"/>
+                    <input type="button" value="Stop"/>
+                    <input type="button" value="Next"/>
+                </div>
+                <Chat ws={this.state.ws} rtc={this.state.rtc}></Chat>
             </div>
         );
     }

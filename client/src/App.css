@@ -1,8 +1,17 @@
 [type="button"] {
+    cursor: pointer;
     background-color: #d84a38;
     border-radius: 2px;
     border: none;
     color: white;
     padding: 5px 10px;
     display: inline-block;
+}
+
+.controls {
+    text-align: center;
+}
+
+[type="button"] + [type="button"] {
+    margin-left: 10px;
 }
