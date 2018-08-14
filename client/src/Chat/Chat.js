@@ -46,7 +46,7 @@ class Chat extends Component {
                 <ul>
                     {this.state.chat}
                 </ul>
-                <div>
+                <div className="input-value">
                     <input type="text" value={this.state.text} onChange={this.input}/>
                     <input type="button" value="Sent" onClick={this.send}/>
                 </div>

@@ -2,6 +2,21 @@
     order: 0;
     flex: 1 1 auto;
     align-self: auto;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.chat > ul {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+
+    overflow-y: scroll;
 }
 
 .to {
@@ -10,4 +25,20 @@
 
 .from {
     color: brown;
+}
+
+.input-value {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    padding: 10px;
+}
+
+.input-value [type="text"] {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
 }
