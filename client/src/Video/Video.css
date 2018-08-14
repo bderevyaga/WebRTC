@@ -1,0 +1,9 @@
+.videos {
+    width: 400px;
+    position: relative;
+}
+
+.videos video {
+    width: 100%;
+    height: 300px;
+}

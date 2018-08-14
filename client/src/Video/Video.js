@@ -6,9 +6,14 @@ import RemoteVideo from "./RemoteVideo/RemoteVideo";
 class Video extends Component {
     render() {
         return (
-            <div>
+            <div className='videos'>
                 <LocalVideo ws={this.props.ws} rtc={this.props.rtc}/>
                 <RemoteVideo ws={this.props.ws} rtc={this.props.rtc}/>
+                <div className="controls">
+                    <input type="button" value="Start"/>
+                    <input type="button" value="Stop"/>
+                    <input type="button" value="Next"/>
+                </div>
             </div>
         );
     }

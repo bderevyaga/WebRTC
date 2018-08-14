@@ -1,0 +1,5 @@
+{
+  "name": "WS Node.js",
+  "description": "A barebones Node.js app using Express 4",
+  "image": "heroku/nodejs"
+}

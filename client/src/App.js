@@ -15,7 +15,7 @@ class App extends Component {
         const RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection;
 
         this.state = {
-            ws: new WebSocket('ws://127.0.0.1:9090'),
+            ws: new WebSocket('wss://nameless-headland-97711.herokuapp.com'),
             rtc: new RTCPeerConnection(configuration, {optional: [{RtpDataChannels: true}]})
         };
 
@@ -85,13 +85,8 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="main">
                 <Video ws={this.state.ws} rtc={this.state.rtc}/>
-                <div className="controls">
-                    <input type="button" value="Start"/>
-                    <input type="button" value="Stop"/>
-                    <input type="button" value="Next"/>
-                </div>
                 <Chat ws={this.state.ws} rtc={this.state.rtc}></Chat>
             </div>
         );

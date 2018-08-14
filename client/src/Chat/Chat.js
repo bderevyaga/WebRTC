@@ -10,7 +10,7 @@ class Chat extends Component {
             chat: []
         };
 
-        this.textChange = this.textChange.bind(this);
+        this.input = this.input.bind(this);
         this.send = this.send.bind(this);
     }
 
@@ -27,25 +27,27 @@ class Chat extends Component {
         }
     }
 
-    textChange(event) {
+    input(event) {
         this.setState({text: event.target.value});
     }
 
     send() {
-        this.state.chat.push(<li className="from">{this.state.text}</li>);
-        this.setState({chat: this.state.chat});
         this.channel.send(this.state.text);
-        this.state.text = '';
+
+        this.setState({
+            chat: [...this.state.chat, <li className="from">{this.state.text}</li>],
+            text: ''
+        });
     }
 
     render() {
         return (
-            <div>
+            <div className="chat">
                 <ul>
                     {this.state.chat}
                 </ul>
                 <div>
-                    <input type="text" value={this.state.text} onChange={this.textChange}/>
+                    <input type="text" value={this.state.text} onChange={this.input}/>
                     <input type="button" value="Sent" onClick={this.send}/>
                 </div>
             </div>

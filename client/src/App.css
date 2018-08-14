@@ -1,3 +1,12 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: stretch;
+}
+
 [type="button"] {
     cursor: pointer;
     background-color: #d84a38;
